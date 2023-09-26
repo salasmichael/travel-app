@@ -1,3 +1,15 @@
-<p>
-  accommodation works!
-</p>
+<ion-grid class="ion-no-padding">
+  <ion-row class="cls-row">
+      <ion-col size="4" class="ion-no-padding">
+        <img alt="Silhouette of mountains" [src]="accommodation?.img" />
+
+      </ion-col>
+      <ion-col size="7" class="content-card">
+        <ion-card-title class="title">{{ accommodation.title }}</ion-card-title>
+        <ion-card-subtitle>Noches desde: ${{ accommodation.price | number }}</ion-card-subtitle>  
+      </ion-col>
+      <ion-col size="1" style="margin: auto; text-align: center;">
+        <ion-icon name="chevron-forward-outline" size="large"></ion-icon>
+      </ion-col>
+  </ion-row>
+</ion-grid>

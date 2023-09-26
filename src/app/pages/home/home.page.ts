@@ -9,6 +9,10 @@ import { TravelService } from 'src/app/services/travel.service';
 })
 export class HomePage implements OnInit {
   public loaded = false;
+  public accommodations: any[] = [];
+  public destinarions: any[] = [];
+  idDestinationDefault:number = 1;
+
   customActionSheetOptions = {
     header: 'Destinos que te gustaria visitar',
     subHeader: 'Selecciona el destino',
@@ -18,18 +22,29 @@ export class HomePage implements OnInit {
               private navController:NavController) { }
 
   ngOnInit() {
+      this.getDestinations();
+      this.getAccommodations(this.idDestinationDefault)
+  }
+
+  getDestinations(){
+    this.destinarions = this.travelService.getDestinations()
+  }
+
+  getAccommodations(id:number){
+    this.loaded = false;
     setTimeout(() => {
+      this.accommodations = this.travelService.getAccommodations(id);
       this.loaded = true;
     }, 1000);
   }
 
-  getAccommodations(id:number){
-    this.travelService.getAccommodations(id)
-
-  }
-
   detail(){
     this.navController.navigateForward('/accommodation-detail')
+  }
+
+  handleChange(ev:any){
+    const id = ev.detail.value;
+    this.getAccommodations(id);
   }
 
 }
