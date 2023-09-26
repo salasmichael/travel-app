@@ -49,5 +49,9 @@ async logout() {
 
 }
 
+back(){
+    this.navController.back()
+}
+
 
 }

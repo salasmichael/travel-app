@@ -1,7 +1,7 @@
 <app-header [backButton]=false pageTitle="Destinos de viaje" [logoutbtn]=true ></app-header>
 
 <ion-content [fullscreen]="true">
-  <ion-card>
+  <!-- <ion-card> -->
   <ion-grid>
       <ion-row>
         <ion-col size="12" >
@@ -19,7 +19,7 @@
         </ion-col>
       </ion-row>
     </ion-grid>
-  </ion-card>
+  <!-- </ion-card> -->
   <!-- list -->
   
   <ion-list *ngIf="!loaded">
@@ -42,7 +42,7 @@
   </ion-list>
 
   <ion-list *ngIf="loaded">
-    <ion-card *ngFor="let accommodation of accommodations" (click)="detail()">
+    <ion-card *ngFor="let accommodation of accommodations" (click)="detail(accommodation)">
       <app-accommodation [accommodation]="accommodation"></app-accommodation>
     </ion-card>
   </ion-list>

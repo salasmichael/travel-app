@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class TravelService {
+  private infoAccomodation: any;
 
   private destinations = [
     {
@@ -64,6 +65,14 @@ export class TravelService {
 
   getDestinations() {
     return this.destinations;
+  }
+
+  setInfoAccommodation(data: any) {
+    this.infoAccomodation = data;
+  }
+
+  getInfoAccommodation() {
+    return this.infoAccomodation;
   }
 
 }

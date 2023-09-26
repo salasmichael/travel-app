@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
+import { TravelService } from 'src/app/services/travel.service';
 
 @Component({
   selector: 'app-accommodation-detail',
@@ -6,10 +8,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./accommodation-detail.page.scss'],
 })
 export class AccommodationDetailPage implements OnInit {
-
-  constructor() { }
+  info:any;
+  constructor(private travelService:TravelService,
+              private navController:NavController) { }
 
   ngOnInit() {
+    this.getInfo();
   }
+   getInfo(){
+    this.info= this.travelService.getInfoAccommodation();
+    if(!this.info){
+      this.navController.back();
+    }
+   }
 
 }

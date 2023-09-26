@@ -38,7 +38,8 @@ export class HomePage implements OnInit {
     }, 1000);
   }
 
-  detail(){
+  detail(data:any){
+    this.travelService.setInfoAccommodation(data);
     this.navController.navigateForward('/accommodation-detail')
   }
 
