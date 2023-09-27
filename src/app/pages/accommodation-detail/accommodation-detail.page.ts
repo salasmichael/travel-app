@@ -22,4 +22,8 @@ export class AccommodationDetailPage implements OnInit {
     }
    }
 
+   goToreservation(){
+    this.navController.navigateForward("/reservation-confirmation");
+   }
+
 }

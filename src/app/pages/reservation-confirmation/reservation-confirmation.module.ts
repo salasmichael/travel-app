@@ -7,14 +7,16 @@ import { IonicModule } from '@ionic/angular';
 import { ReservationConfirmationPageRoutingModule } from './reservation-confirmation-routing.module';
 
 import { ReservationConfirmationPage } from './reservation-confirmation.page';
+import { ComponentModule } from "../../components/component.module";
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    ReservationConfirmationPageRoutingModule
-  ],
-  declarations: [ReservationConfirmationPage]
+    declarations: [ReservationConfirmationPage],
+    imports: [
+        CommonModule,
+        FormsModule,
+        IonicModule,
+        ReservationConfirmationPageRoutingModule,
+        ComponentModule
+    ]
 })
 export class ReservationConfirmationPageModule {}

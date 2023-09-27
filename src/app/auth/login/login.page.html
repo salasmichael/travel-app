@@ -1,28 +1,35 @@
 
   <ion-content class="ion-padding">
-    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-      <ion-list>
-        <ion-item>
-          <ion-label position="stacked">Dirección de correo</ion-label>
-          <ion-input formControlName="userEmail" type="email"></ion-input>
-        </ion-item>
-        <ion-item *ngIf="invalidField('userEmail')">
-          <ion-label text-wrap color="danger">
-            {{getErrorMessage('userEmail')}}  
-          </ion-label>
-        </ion-item>
+    
+    <div class="container">
+      <form class="centered-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div style="text-align: center; margin-bottom: 20%;">
+          <ion-title class="title">TravelApp</ion-title>
+        </div>
 
-        <ion-item>
-          <ion-label position="stacked">Contraseña</ion-label>
-          <ion-input formControlName="userPassword" type="password"></ion-input>
-        </ion-item>
-        <ion-item *ngIf="invalidField('userPassword')">
-          <ion-label text-wrap color="danger">
-            {{getErrorMessage('userPassword')}}  
-          </ion-label>
-        </ion-item>
+        <ion-list>
+          <ion-item>
+            <ion-label position="stacked">Dirección de correo</ion-label>
+            <ion-input formControlName="userEmail" type="email"></ion-input>
+          </ion-item>
+          <ion-item *ngIf="invalidField('userEmail')">
+            <ion-label text-wrap color="danger">
+              {{getErrorMessage('userEmail')}}  
+            </ion-label>
+          </ion-item>
 
-      </ion-list>
-      <ion-button color="primary" class="btn" type="submit">Iniciar sesión</ion-button>
-    </form>
+          <ion-item>
+            <ion-label position="stacked">Contraseña</ion-label>
+            <ion-input formControlName="userPassword" type="password"></ion-input>
+          </ion-item>
+          <ion-item *ngIf="invalidField('userPassword')">
+            <ion-label text-wrap color="danger">
+              {{getErrorMessage('userPassword')}}  
+            </ion-label>
+          </ion-item>
+
+        </ion-list>
+        <ion-button color="primary" class="btn" type="submit">Iniciar sesión</ion-button>
+      </form>
+    </div>
   </ion-content>

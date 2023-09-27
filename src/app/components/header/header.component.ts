@@ -20,10 +20,11 @@ export class HeaderComponent  {
 async logout() {
 
     const alert = await this.alertController.create({
-    header: 'Deseas cerrar sesión?',
+    header: '¿Deseas cerrar sesión?',
+    mode: 'ios',
     buttons: [
       {
-        text: 'Cancel',
+        text: 'Cancelar',
         role: 'cancel',
         handler: () => {
           this.handlerMessage = 'Canceled';
