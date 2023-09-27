@@ -37,11 +37,9 @@ getErrorMessage(field: string):string{
 onSubmit(){
   this.formSubmitted=true;
 
-  // if(!this.loginForm.invalid){
-    // console.log(this.loginForm.value?.userEmail);
-    
+  if(!this.loginForm.invalid){
     this.navCtrl.navigateForward(`/home`);
-  // }
+  }
 }
 
 }

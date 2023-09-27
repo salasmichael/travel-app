@@ -35,7 +35,7 @@ export class HomePage implements OnInit {
     setTimeout(() => {
       this.accommodations = this.travelService.getAccommodations(id);
       this.loaded = true;
-    }, 1000);
+    }, 2000);
   }
 
   detail(data:any){
